@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Partie 7 Exercice 4</title>
-  </head>
-  <body>
-    <?php
-      if (isset($_POST['firstName']) AND isset($_POST['lastName']))
-      {
-        echo 'Bonjour, ' . $_POST['firstName'] . ' ' . $_POST['lastName'];
-      }
-     ?>
-  </body>
+    <head>
+        <meta charset="utf-8">
+        <title>Partie 7 Exercice 4</title>
+    </head>
+    <body>
+        <?php
+        // Vérification des POST s'ils existent
+        if (isset($_POST['firstName']) && isset($_POST['lastName'])) {
+            // htmlspecialchars qui sert à échapper le code HTML ( Éviter les failles XSS )
+            echo 'Bonjour, ' . htmlspecialchars($_POST['firstName']) . ' ' . htmlspecialchars($_POST['lastName']);
+        }
+        ?>
+    </body>
 </html>
